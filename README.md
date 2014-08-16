@@ -11,6 +11,8 @@ Install
 npm install choppa
 ```
 
+![get to da choppa](http://i.imgur.com/gU2Tw.gif)
+
 Usage
 -----
 
