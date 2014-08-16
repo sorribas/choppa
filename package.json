@@ -1,6 +1,6 @@
 {
   "name": "choppa",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Chop a stream into specified size chunks.",
   "main": "index.js",
   "dependencies": {
