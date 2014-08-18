@@ -1,6 +1,8 @@
 choppa
 ======
 
+[![build status](https://secure.travis-ci.org/sorribas/choppa.png)](http://travis-ci.org/sorribas/choppa)
+
 Through stream that chops a stream into specified size chunks. The main purpose of the module is to test if your
 stream behaves the same way when it receives different sized chunks.
 
