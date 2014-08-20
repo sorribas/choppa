@@ -24,8 +24,9 @@ var choppa = function(chunkSize) {
     cb();
   };
 
-  var flush = function() {
+  var flush = function(cb) {
     this.push(prev);
+    cb();
   };
 
   return through(transform, flush);
