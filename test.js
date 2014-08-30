@@ -24,3 +24,19 @@ test('basic test', function(t) {
     t.end();
   });
 });
+
+test('test limit', function(t) {
+  var chars = [];
+  var chp = choppa(3);
+  fs.createReadStream('./fixtures').pipe(chp).on('data', function(data) {
+    chars.push(data.toString());
+  });
+
+  chp.on('finish', function() {
+    t.equal(chars[0],  'Whe');
+    t.equal(chars[1],  'n G');
+    t.equal(chars[2],  'reg');
+    t.equal(chars[3],  'or ');
+    t.end();
+  });
+});
