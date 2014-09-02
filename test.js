@@ -40,3 +40,30 @@ test('test limit', function(t) {
     t.end();
   });
 });
+
+test('async pipe', function(t) {
+  var chars = [];
+  var chp = choppa();
+
+  setTimeout(function() {
+    chp.on('data', function(data) {
+      chars.push(data.toString());
+    });
+  }, 400);
+
+  chp.on('end', function() {
+    t.equal(chars[0],  'W');
+    t.equal(chars[1],  'h');
+    t.equal(chars[2],  'e');
+    t.equal(chars[3],  'n');
+    t.equal(chars[4],  ' ');
+    t.equal(chars[5],  'G');
+    t.equal(chars[6],  'r');
+    t.equal(chars[7],  'e');
+    t.equal(chars[8],  'g');
+    t.equal(chars[9],  'o');
+    t.equal(chars[10], 'r');
+    t.end();
+  });
+  fs.createReadStream('./fixtures').pipe(chp);
+});
