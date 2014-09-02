@@ -29,7 +29,7 @@ var choppa = function(chunkSize) {
     cb();
   };
 
-  return through(transform, flush);
+  return through.obj(transform, flush);
 };
 
 module.exports = choppa;
