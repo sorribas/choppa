@@ -5,6 +5,7 @@ var choppa = function(chunkSize) {
   var prev = new Buffer(0);
 
   var transform = function(chunk, enc, cb) {
+    if (typeof chunk === 'string') chunk = new Buffer(chunk);
     chunk = Buffer.concat([prev, chunk]);
     var self = this;
     if (chunkSize > 0) {
