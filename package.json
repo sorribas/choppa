@@ -4,7 +4,7 @@
   "description": "Chop a stream into specified size chunks.",
   "main": "index.js",
   "dependencies": {
-    "through2": "~0.6.1"
+    "through2": "^2.0.1"
   },
   "devDependencies": {
     "tape": "^2.14.0"
